@@ -249,7 +249,7 @@ export default function PersonalStyleIntelligence() {
             PERSONAL STYLE INTELLIGENCE
           </div>
 
-          <span className="psi-index">04 / THE DISCOVERY</span>
+          <span className="psi-index">03 / THE DISCOVERY</span>
         </div>
 
         <div className="psi-intro">
@@ -417,14 +417,24 @@ export default function PersonalStyleIntelligence() {
                       ))}
                   </div>
 
-                  <button
-                    type="button"
-                    className="psi-restart"
-                    onClick={restartQuiz}
-                  >
-                    <RotateCcw size={15} />
-                    Discover another direction
-                  </button>
+                  <div className="psi-result-actions">
+                    <a href="#virtual-try-on" className="psi-action-cta">
+                      <span>Try pieces in Studio</span>
+                      <ArrowRight size={15} />
+                    </a>
+                    <a href="#personal-stylist" className="psi-action-secondary">
+                      <span>Curate in Stylist</span>
+                      <Sparkles size={14} />
+                    </a>
+                    <button
+                      type="button"
+                      className="psi-restart"
+                      onClick={restartQuiz}
+                    >
+                      <RotateCcw size={14} />
+                      Discover another direction
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             )}

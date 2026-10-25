@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ArrowRight,
@@ -333,6 +333,26 @@ export default function PersonalStylist() {
   const [hasGenerated, setHasGenerated] = useState(false);
   const [showSavedOnly, setShowSavedOnly] = useState(false);
 
+  useEffect(() => {
+    function checkPreselected() {
+      try {
+        const preselected = localStorage.getItem(
+          "ps_preselected_aesthetic"
+        ) as Aesthetic | null;
+        if (preselected && aesthetics.some((a) => a.value === preselected)) {
+          setAesthetic(preselected);
+          localStorage.removeItem("ps_preselected_aesthetic");
+        }
+      } catch {
+        // ignore
+      }
+    }
+    checkPreselected();
+    window.addEventListener("zyra-aesthetic-selected", checkPreselected);
+    return () =>
+      window.removeEventListener("zyra-aesthetic-selected", checkPreselected);
+  }, []);
+
   function persist(nextSavedIds: string[], nextProfile?: {
     aesthetic: Aesthetic;
     occasion: Occasion;
@@ -350,6 +370,7 @@ export default function PersonalStylist() {
           budget: nextProfile?.budget ?? budget,
         }),
       );
+      window.dispatchEvent(new Event("zyra-saved-updated"));
     } catch {
       // The styling experience still works if browser storage is unavailable.
     }

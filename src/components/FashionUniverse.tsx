@@ -142,7 +142,14 @@ export default function FashionUniverse() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<Category>("All");
   const [activeStyle, setActiveStyle] = useState("All styles");
-  const [saved, setSaved] = useState<number[]>([]);
+  const [saved, setSaved] = useState<number[]>(() => {
+    try {
+      const stored = localStorage.getItem("fu_saved_products_v1");
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
   const [showCollection, setShowCollection] = useState(false);
   const [showStylingNote, setShowStylingNote] = useState(false);
 
@@ -182,11 +189,18 @@ export default function FashionUniverse() {
   }, [search, category, activeStyle, showCollection, saved]);
 
   function toggleSaved(id: number) {
-    setSaved((current) =>
-      current.includes(id)
+    setSaved((current) => {
+      const next = current.includes(id)
         ? current.filter((item) => item !== id)
-        : [...current, id]
-    );
+        : [...current, id];
+      try {
+        localStorage.setItem("fu_saved_products_v1", JSON.stringify(next));
+        window.dispatchEvent(new Event("zyra-saved-updated"));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
   }
 
   function resetFilters() {
@@ -514,8 +528,8 @@ export default function FashionUniverse() {
         <div className="fu-footer">
           <span>FASHION IS BETTER WHEN IT CONNECTS.</span>
 
-          <a href="#virtual-try-on">
-            Explore virtual try-on <ArrowRight size={15} />
+          <a href="#style-multiverse">
+            Explore the Style Multiverse <ArrowRight size={15} />
           </a>
         </div>
       </div>

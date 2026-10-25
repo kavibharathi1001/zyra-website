@@ -20,6 +20,7 @@ type FashionItem = {
 
 type Outfit = {
   name: string;
+  aesthetic: string;
   description: string;
   items: FashionItem[];
 };
@@ -27,8 +28,9 @@ type Outfit = {
 const outfits: Outfit[] = [
   {
     name: "The Midnight Edit",
+    aesthetic: "Quiet Luxury",
     description:
-      "A refined monochrome combination with clean lines and understated details.",
+      "A refined monochrome combination with clean lines, structured silhouette, and understated details.",
     items: [
       {
         id: "top-1",
@@ -37,7 +39,7 @@ const outfits: Outfit[] = [
         price: "Minimal",
         image:
           "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=85",
-        description: "A versatile foundation for a modern wardrobe.",
+        description: "A versatile foundation for a modern wardrobe with drape.",
       },
       {
         id: "bottom-1",
@@ -46,7 +48,7 @@ const outfits: Outfit[] = [
         price: "Refined",
         image:
           "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=85",
-        description: "Balances the relaxed silhouette with structure.",
+        description: "Balances the relaxed silhouette with clean structural pleating.",
       },
       {
         id: "shoe-1",
@@ -55,41 +57,112 @@ const outfits: Outfit[] = [
         price: "Essential",
         image:
           "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85",
-        description: "A clean finishing touch for everyday wear.",
+        description: "A clean, monochromatic finishing touch for effortless wear.",
       },
     ],
   },
   {
     name: "The Earth Edit",
+    aesthetic: "Warm Minimalist",
     description:
-      "Muted neutrals and earthy tones create a relaxed, considered look.",
+      "Muted neutrals and earthy tones creating an organic, relaxed, and deeply considered look.",
     items: [
       {
         id: "top-2",
         category: "01 / TOP",
-        name: "Relaxed Neutral Shirt",
+        name: "Relaxed Neutral Linen Shirt",
         price: "Natural",
         image:
           "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=85",
-        description: "An easy layer for a soft, neutral palette.",
+        description: "An easy layer for a soft, breathable neutral palette.",
       },
       {
         id: "bottom-2",
         category: "02 / BOTTOM",
-        name: "Everyday Neutral Trousers",
+        name: "Everyday Tonal Chinos",
         price: "Balanced",
         image:
           "https://images.unsplash.com/photo-1506629905607-d9f4d5e7c9b4?auto=format&fit=crop&w=700&q=85",
-        description: "Creates a balanced silhouette and tonal contrast.",
+        description: "Creates an unbroken silhouette with gentle earthy contrast.",
       },
       {
         id: "shoe-2",
         category: "03 / FOOTWEAR",
-        name: "Classic Street Sneakers",
+        name: "Classic Low Profile Trainers",
         price: "Versatile",
         image:
           "https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=700&q=85",
-        description: "Keeps the outfit grounded and effortless.",
+        description: "Keeps the ensemble grounded with textured suede accents.",
+      },
+    ],
+  },
+  {
+    name: "The Atelier Edit",
+    aesthetic: "Modern Classic",
+    description:
+      "Tailored outerwear paired with relaxed knitwear and sculpted leather accessories for city days.",
+    items: [
+      {
+        id: "top-3",
+        category: "01 / TOP",
+        name: "Double-Breasted Wool Blazer",
+        price: "Structured",
+        image:
+          "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=85",
+        description: "Architectural shoulders and a tailored drape for quiet authority.",
+      },
+      {
+        id: "bottom-3",
+        category: "02 / BOTTOM",
+        name: "Straight-Leg Selvedge Denim",
+        price: "Classic",
+        image:
+          "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=85",
+        description: "Deep indigo denim adding raw texture against formal tailoring.",
+      },
+      {
+        id: "shoe-3",
+        category: "03 / FOOTWEAR",
+        name: "Polished Lug Loafers",
+        price: "Statement",
+        image:
+          "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=85",
+        description: "Understated craftsmanship with an elevated commando sole.",
+      },
+    ],
+  },
+  {
+    name: "The City Rebel Edit",
+    aesthetic: "Streetwear",
+    description:
+      "Expressive proportions, utility hardware, and high-contrast styling for confident presence.",
+    items: [
+      {
+        id: "top-4",
+        category: "01 / TOP",
+        name: "Oversized Utility Trench",
+        price: "Expressive",
+        image:
+          "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=700&q=85",
+        description: "Voluminous cut with water-resistant technical cotton.",
+      },
+      {
+        id: "bottom-4",
+        category: "02 / BOTTOM",
+        name: "Wide Cargo Trousers",
+        price: "Relaxed",
+        image:
+          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85",
+        description: "Deep gusset pockets and an adjustable cinch hem.",
+      },
+      {
+        id: "shoe-4",
+        category: "03 / FOOTWEAR",
+        name: "Sculpted Runner Sneakers",
+        price: "Dynamic",
+        image:
+          "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85",
+        description: "Chunky ergonomic silhouette in muted chalk and anthracite.",
       },
     ],
   },
@@ -121,7 +194,7 @@ export default function StyleDiscovery() {
         >
           <span className="sd-eyebrow">
             <span className="sd-eyebrow-dot" />
-            01 / INTELLIGENT STYLE
+            01 / CURATED STYLE STUDY
           </span>
 
           <h2>
@@ -134,24 +207,27 @@ export default function StyleDiscovery() {
 
           <p className="sd-description">
             Great style isn't about owning more. It's about seeing what works
-            together. Discover unexpected combinations with ZYRA.
+            together. Explore curated combinations and discover how single
+            garments transform into complete, signature looks.
           </p>
 
-          <a className="sd-text-link" href="#style-discovery">
-            Explore the experience
+          <a className="sd-text-link" href="#infinite-outfit-lab">
+            Explore Outfit Lab
             <ArrowDownRight size={17} strokeWidth={1.5} />
           </a>
 
           <div className="sd-note">
             <Sparkles size={15} />
-            <span>Curated combinations. A new perspective.</span>
+            <span>Interactive curation · Discover 4 signature edits</span>
           </div>
         </motion.div>
 
         <div className="sd-showcase">
           <div className="sd-showcase-top">
             <div className="sd-look-info">
-              <span className="sd-look-label">THE ZYRA EDIT</span>
+              <span className="sd-look-label">
+                THE ZYRA EDIT · {outfit.aesthetic}
+              </span>
               <AnimatePresence mode="wait">
                 <motion.h3
                   key={outfit.name}
@@ -260,8 +336,8 @@ export default function StyleDiscovery() {
               <span className="sd-status-light" />
               <span>
                 {selectedItem
-                  ? "Piece selected · Explore its details"
-                  : "A considered combination"}
+                  ? "Garment inspect active · Tap again to minimize"
+                  : "Curated composition · Click any piece to inspect details"}
               </span>
             </div>
 
@@ -278,7 +354,7 @@ export default function StyleDiscovery() {
 
           <div className="sd-disclaimer">
             <span>ZYRA / STYLE STUDY</span>
-            <span>Conceptual outfit inspiration · Demo experience</span>
+            <span>Interactive editorial lookbook · Real styling combinations</span>
           </div>
         </div>
       </div>

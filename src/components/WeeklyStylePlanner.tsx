@@ -113,17 +113,31 @@ const weeklyLooks = [
 
 export default function WeeklyStylePlanner() {
   const [activeDay, setActiveDay] = useState(0);
-  const [plannedDays, setPlannedDays] = useState<number[]>([]);
+  const [plannedDays, setPlannedDays] = useState<number[]>(() => {
+    try {
+      const stored = localStorage.getItem("zyra_planned_days_v1");
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
 
   const look = weeklyLooks[activeDay];
   const isPlanned = plannedDays.includes(activeDay);
 
   function togglePlannedDay() {
-    setPlannedDays((previous) =>
-      previous.includes(activeDay)
+    setPlannedDays((previous) => {
+      const next = previous.includes(activeDay)
         ? previous.filter((day) => day !== activeDay)
-        : [...previous, activeDay],
-    );
+        : [...previous, activeDay];
+      try {
+        localStorage.setItem("zyra_planned_days_v1", JSON.stringify(next));
+        window.dispatchEvent(new Event("zyra-saved-updated"));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
   }
 
   return (

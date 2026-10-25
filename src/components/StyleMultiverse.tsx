@@ -4,12 +4,13 @@ import {
   ArrowUpRight,
   Sparkles,
   X,
+  Compass,
 } from "lucide-react";
 import "./StyleMultiverse.css";
 
 const universes = [
   {
-    id: "quiet",
+    id: "quiet-luxury",
     number: "01",
     name: "Quiet Luxury",
     tagline: "Elegance never needs to shout.",
@@ -23,7 +24,7 @@ const universes = [
     pieces: ["Tailored blazer", "Wide-leg trousers", "Minimal accessories"],
   },
   {
-    id: "academia",
+    id: "dark-academia",
     number: "02",
     name: "Dark Academia",
     tagline: "A little mystery. A lot of character.",
@@ -44,14 +45,14 @@ const universes = [
     imageAlt: "Expressive urban streetwear with relaxed, oversized proportions",
     description:
       "Oversized proportions, confident contrasts, and street-inspired pieces that refuse to blend in.",
-    colors: ["#242424", "#8A8F86", "#D4FF72"],
+    colors: ["#242424", "#8A8F86", "#8fc99a"],
     image:
       "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1100&q=85",
     mood: "Bold · Urban · Unapologetic",
     pieces: ["Oversized jacket", "Statement sneakers", "Utility trousers"],
   },
   {
-    id: "minimal",
+    id: "minimalist",
     number: "04",
     name: "Clean Minimalist",
     tagline: "Less noise. More you.",
@@ -79,14 +80,14 @@ const universes = [
     pieces: ["Flowing blouse", "Midi skirt", "Delicate jewellery"],
   },
   {
-    id: "future",
+    id: "future-couture",
     number: "06",
     name: "Future Couture",
     tagline: "Wear what doesn't exist yet.",
     imageAlt: "Avant-garde editorial fashion with sculptural, forward-looking styling",
     description:
       "Unexpected shapes, experimental combinations, and forward-looking fashion for those who imagine beyond trends.",
-    colors: ["#A3F7D1", "#424C49", "#171A19"],
+    colors: ["#8fc99a", "#424C49", "#171A19"],
     image:
       "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=85",
     mood: "Experimental · Futuristic · Artistic",
@@ -116,7 +117,7 @@ export default function StyleMultiverse() {
         <div
           className="mv-grid-viewport"
           role="group"
-          aria-label="Choose one of six fashion aesthetics"
+          aria-label="Explore 6 distinctive fashion aesthetics"
         >
           <div className="mv-grid-plane">
             {rows.map((row, rowIndex) => (
@@ -184,7 +185,7 @@ export default function StyleMultiverse() {
         >
           <div className="mv-eyebrow">
             <Sparkles size={14} />
-            <span>DISCOVER YOUR AESTHETIC</span>
+            <span>06 / THE STYLE MULTIVERSE</span>
           </div>
 
           <h2>
@@ -194,21 +195,24 @@ export default function StyleMultiverse() {
           </h2>
 
           <p className="mv-lead">
-            Six aesthetics. Infinite expressions. Discover the side of your
+            Six aesthetics. Infinite expressions. Step into a cinematic gallery
+            of self-expression designed to help you discover the side of your
             style you&apos;ve been waiting to meet.
           </p>
           <p className="mv-support">
-            Your style is not one-dimensional. Explore different aesthetics and
-            find the ones that feel most like you.
+            Tap any moving frame to explore key foundation pieces, palette moods,
+            and complete outfit formulas.
           </p>
 
           <a href="#personal-stylist" className="mv-banner-cta">
-            EXPLORE YOUR STYLE <ArrowUpRight size={17} />
+            <Compass size={16} />
+            <span>EXPLORE YOUR STYLE IN STYLIST</span>
+            <ArrowUpRight size={17} />
           </a>
         </motion.div>
 
         <div className="mv-stage-caption" aria-hidden="true">
-          <span>AN OPEN WORLD OF SELF-EXPRESSION</span>
+          <span>AN OPEN UNIVERSE OF SELF-EXPRESSION</span>
           <span>01 — 06</span>
         </div>
       </div>
@@ -269,6 +273,7 @@ export default function StyleMultiverse() {
                       key={color}
                       className="mv-swatch"
                       style={{ backgroundColor: color }}
+                      title={color}
                     />
                   ))}
                 </div>
@@ -276,9 +281,22 @@ export default function StyleMultiverse() {
                 <a
                   href="#personal-stylist"
                   className="mv-modal-cta"
-                  onClick={() => setSelected(null)}
+                  onClick={() => {
+                    try {
+                      localStorage.setItem(
+                        "ps_preselected_aesthetic",
+                        selected.id
+                      );
+                      window.dispatchEvent(
+                        new Event("zyra-aesthetic-selected")
+                      );
+                    } catch {
+                      // ignore
+                    }
+                    setSelected(null);
+                  }}
                 >
-                  Explore this aesthetic <ArrowUpRight size={17} />
+                  Explore this aesthetic in Stylist <ArrowUpRight size={17} />
                 </a>
               </div>
             </motion.div>

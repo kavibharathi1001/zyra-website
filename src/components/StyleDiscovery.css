@@ -4,12 +4,13 @@
    ========================================================== */
 
 .style-discovery {
-  --sd-bg: #050806;
-  --sd-panel: #0b100d;
-  --sd-green: #00f5a0;
-  --sd-text: #f3f5f2;
-  --sd-muted: #8b968e;
-  --sd-line: rgba(255, 255, 255, 0.105);
+  --sd-bg: var(--zyra-bg, #080a08);
+  --sd-panel: var(--zyra-elevated, #141814);
+  --sd-green: var(--zyra-emerald, #8fc99a);
+  --sd-green-bright: var(--zyra-emerald-bright, #b6e6bd);
+  --sd-text: var(--zyra-text, #f2f3ee);
+  --sd-muted: var(--zyra-text-muted, #a0a69c);
+  --sd-line: var(--zyra-border, rgba(242, 243, 238, 0.08));
 
   position: relative;
   isolation: isolate;
