@@ -19,7 +19,7 @@ const weeklyLooks = [
     description:
       "Start the week with a polished look that feels effortless, comfortable, and completely you.",
     image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=85",
     items: ["Structured blazer", "Straight-leg trousers", "Minimal sneakers"],
     palette: ["#D7C8B5", "#343B32", "#EAE6DD"],
     mood: "Polished · Confident · Effortless",
@@ -33,7 +33,7 @@ const weeklyLooks = [
     description:
       "Build an everyday outfit around comfortable layers, versatile essentials, and one standout detail.",
     image:
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=1200&q=85",
     items: ["Relaxed overshirt", "Classic denim", "Everyday trainers"],
     palette: ["#8E9D8B", "#D5C3AA", "#292D2A"],
     mood: "Relaxed · Fresh · Expressive",
@@ -47,7 +47,7 @@ const weeklyLooks = [
     description:
       "A balanced, relaxed outfit for spontaneous coffee plans, creative meetings, and city afternoons.",
     image:
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1200&q=85",
     items: ["Soft knitwear", "Tailored denim", "Layered accessories"],
     palette: ["#D6BEB3", "#B7A58E", "#F0E9E0"],
     mood: "Approachable · Modern · Natural",
@@ -61,7 +61,7 @@ const weeklyLooks = [
     description:
       "Combine unexpected shapes and confident layers for a look that communicates personality.",
     image:
-      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=1200&q=85",
     items: ["Statement outerwear", "Relaxed trousers", "Bold footwear"],
     palette: ["#2B302B", "#A7B89A", "#D6D3C9"],
     mood: "Creative · Bold · Individual",
@@ -75,7 +75,7 @@ const weeklyLooks = [
     description:
       "Transition from daytime plans to evening energy with stronger silhouettes and considered details.",
     image:
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1566206091559-0f622955f7bc?auto=format&fit=crop&w=1200&q=85",
     items: ["Statement top", "Dark tailored trousers", "Sculptural accessories"],
     palette: ["#171A18", "#7B8B76", "#D3C4AD"],
     mood: "Confident · Refined · Magnetic",
@@ -89,7 +89,7 @@ const weeklyLooks = [
     description:
       "Make room for comfort, colour, and the pieces you love wearing when nobody sets the dress code.",
     image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1525450824786-227cbef70703?auto=format&fit=crop&w=1200&q=85",
     items: ["Relaxed statement piece", "Comfort-first bottoms", "Favourite accessories"],
     palette: ["#B9C9AF", "#D6B9A9", "#E8E2D7"],
     mood: "Playful · Relaxed · Authentic",
@@ -103,7 +103,7 @@ const weeklyLooks = [
     description:
       "Finish the week with breathable fabrics, gentle colours, and an outfit that feels as good as it looks.",
     image:
-      "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=85",
     items: ["Soft everyday layers", "Lightweight trousers", "Simple jewellery"],
     palette: ["#D8CDBB", "#A9B9A5", "#F1ECE4"],
     mood: "Comfortable · Calm · Timeless",

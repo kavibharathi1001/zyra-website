@@ -143,11 +143,72 @@ main {
   text-transform: uppercase;
   transition: color 180ms ease;
   position: relative;
-  padding: 6px 0;
+  padding: 8px 4px;
 }
 
-.nav-links.desktop-nav a:hover {
+.nav-links.desktop-nav a:hover,
+.nav-links.desktop-nav a.is-active {
   color: var(--zyra-green-bright);
+}
+
+.nav-active-pill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--zyra-green);
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(143, 201, 154, 0.85);
+}
+
+/* 21st.dev Shimmer Button Effect */
+.button-primary,
+.nav-cta,
+.vts-try-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-primary::after,
+.nav-cta::after,
+.vts-try-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  animation: zyraButtonShimmer 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes zyraButtonShimmer {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  25%, 100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+/* 21st.dev Spotlight Hover Card */
+.spotlight-card {
+  position: relative;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spotlight-card:hover {
+  border-color: rgba(143, 201, 154, 0.35);
+  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 20px -2px rgba(143, 201, 154, 0.15);
+  transform: translateY(-2px);
 }
 
 .nav-tools {
@@ -722,6 +783,61 @@ main {
     rgba(143, 201, 154, 0.05) 60%,
     transparent
   );
+}
+
+/* 21st.dev LUXURY EDITORIAL MARQUEE STRIP */
+.zyra-marquee-strip {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(242, 243, 238, 0.08);
+  border-bottom: 1px solid rgba(242, 243, 238, 0.08);
+  background: rgba(14, 18, 15, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 16px 0;
+  display: flex;
+  user-select: none;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.zyra-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: zyraMarqueeScroll 32s linear infinite;
+}
+
+.zyra-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 40px;
+  white-space: nowrap;
+}
+
+.zyra-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: rgba(242, 243, 238, 0.65);
+  text-transform: uppercase;
+}
+
+.zyra-marquee-item span.star {
+  color: var(--zyra-green);
+  font-size: 11px;
+}
+
+@keyframes zyraMarqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* FINAL CTA */

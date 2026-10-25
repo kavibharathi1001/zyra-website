@@ -56,7 +56,7 @@ const outfits: Outfit[] = [
         name: "Everyday Minimal Sneakers",
         price: "Essential",
         image:
-          "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85",
+          "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=85",
         description: "A clean, monochromatic finishing touch for effortless wear.",
       },
     ],
@@ -108,7 +108,7 @@ const outfits: Outfit[] = [
         name: "Double-Breasted Wool Blazer",
         price: "Structured",
         image:
-          "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=85",
+          "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=700&q=85",
         description: "Architectural shoulders and a tailored drape for quiet authority.",
       },
       {
@@ -152,7 +152,7 @@ const outfits: Outfit[] = [
         name: "Wide Cargo Trousers",
         price: "Relaxed",
         image:
-          "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=85",
+          "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=700&q=85",
         description: "Deep gusset pockets and an adjustable cinch hem.",
       },
       {
@@ -161,7 +161,7 @@ const outfits: Outfit[] = [
         name: "Sculpted Runner Sneakers",
         price: "Dynamic",
         image:
-          "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=85",
+          "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=700&q=85",
         description: "Chunky ergonomic silhouette in muted chalk and anthracite.",
       },
     ],

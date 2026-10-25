@@ -29,7 +29,7 @@ const outfits: Record<StyleName, Outfit> = {
     reason:
       "Neutral tones, unembellished textures, and simple silhouettes create a balanced, timeless foundation that lets the wearer lead.",
     image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1100&q=85",
     layers: ["Tailored Wool Trench", "Relaxed Cotton Poplin", "Clean Trousers"],
   },
 
@@ -40,7 +40,7 @@ const outfits: Record<StyleName, Outfit> = {
     reason:
       "Relaxed oversized cuts, technical textiles, and contrasting layers combine to deliver an expressive street-forward attitude.",
     image:
-      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1100&q=85",
     layers: ["Boxy Utility Parka", "Heavyweight Hooded Layer", "Wide Leg Cargo"],
   },
 
@@ -51,7 +51,7 @@ const outfits: Record<StyleName, Outfit> = {
     reason:
       "Softly structured outerwear and understated earthy colors bring an elevated finish to casual dining, creative workplaces, and gallery weekends.",
     image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&w=1100&q=85",
     layers: ["Unstructured Cashmere Coat", "Merino Fine Knit", "Tonal Chinos"],
   },
 
@@ -62,7 +62,7 @@ const outfits: Record<StyleName, Outfit> = {
     reason:
       "Heritage houndstooth, rich cream knitwear, and sculpted pleats communicate quiet luxury without logos or loud elements.",
     image:
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=1100&q=85",
     layers: ["Textured Houndstooth Blazer", "Cable Knit Crew", "Pleated Flannel"],
   },
 };

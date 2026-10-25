@@ -18,7 +18,6 @@ import FashionUniverse from "./components/FashionUniverse";
 import StyleMultiverse from "./components/StyleMultiverse";
 import WeeklyStylePlanner from "./components/WeeklyStylePlanner";
 import PersonalStylist from "./components/PersonalStylist";
-import ProductNavigation from "./components/ProductNavigation";
 import {
   GlassTiles,
   type GlassTilesPalette,
@@ -29,12 +28,13 @@ const FashionScene = lazy(() => import("./FashionScene"));
 
 const navigation = [
   { label: "Discover", href: "#style-discovery" },
-  { label: "AI Studio", href: "#infinite-outfit-lab" },
+  { label: "Outfit Lab", href: "#infinite-outfit-lab" },
+  { label: "Style DNA", href: "#style-dna" },
   { label: "Try-On", href: "#virtual-try-on" },
   { label: "Universe", href: "#fashion-universe" },
   { label: "Multiverse", href: "#style-multiverse" },
   { label: "Planner", href: "#weekly-style" },
-  { label: "My Stylist", href: "#personal-stylist" },
+  { label: "Stylist", href: "#personal-stylist" },
 ];
 
 const zyraPalette: GlassTilesPalette = {
@@ -71,6 +71,7 @@ export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [savedCount, setSavedCount] = useState(0);
+  const [activeSection, setActiveSection] = useState("style-discovery");
 
   const currentYear = 2026;
 
@@ -88,6 +89,38 @@ export default function App() {
 
     return () => {
       window.removeEventListener("scroll", updateProgress);
+    };
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = [
+      "home",
+      "style-discovery",
+      "infinite-outfit-lab",
+      "style-dna",
+      "virtual-try-on",
+      "fashion-universe",
+      "style-multiverse",
+      "weekly-style",
+      "personal-stylist",
+    ];
+
+    function handleScroll() {
+      const scrollPos = window.scrollY + 240;
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sectionIds[i]);
+          break;
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -139,11 +172,26 @@ export default function App() {
 
         {/* Desktop Navigation Links */}
         <nav className="nav-links desktop-nav" aria-label="Main navigation">
-          {navigation.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
+          {navigation.map((link) => {
+            const targetId = link.href.replace("#", "");
+            const isActive = activeSection === targetId;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={isActive ? "nav-link is-active" : "nav-link"}
+              >
+                {link.label}
+                {isActive && (
+                  <motion.span
+                    layoutId="activeNavPill"
+                    className="nav-active-pill"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Global Action Tools */}
@@ -225,9 +273,6 @@ export default function App() {
           )}
         </AnimatePresence>
       </header>
-
-      {/* Horizontal Sub-Navigation Strip */}
-      <ProductNavigation />
 
       {/* Hero Section */}
       <section className="hero" id="home">
@@ -380,6 +425,40 @@ export default function App() {
 
         <div className="manifesto-line" />
       </section>
+
+      {/* 21st.dev Luxury Editorial Marquee Strip */}
+      <div className="zyra-marquee-strip" aria-hidden="true">
+        <div className="zyra-marquee-track">
+          {[1, 2].map((group) => (
+            <div key={group} className="zyra-marquee-group">
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> 21st VIRTUAL TRY-ON STUDIO
+              </span>
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> DRAGGABLE SPLIT COMPARISON
+              </span>
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> ARCHITECTURAL SILHOUETTE SYNTHESIS
+              </span>
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> CLIENT-SIDE FIT LAB
+              </span>
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> 100% PRIVATE LOCAL MEMORY
+              </span>
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> BESPOKE COLOR HARMONY MATRIX
+              </span>
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> EDITORIAL ATELIER CURATION
+              </span>
+              <span className="zyra-marquee-item">
+                <span className="star">✦</span> INTERACTIVE STYLE MULTIVERSE
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* The 8 Connected Product Experiences */}
       <StyleDiscovery />

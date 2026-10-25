@@ -19,7 +19,7 @@ const universes = [
       "Refined silhouettes, luxurious textures, and timeless pieces that make simplicity feel extraordinary.",
     colors: ["#C6B8A3", "#827665", "#252923"],
     image:
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1100&q=85",
     mood: "Understated · Refined · Timeless",
     pieces: ["Tailored blazer", "Wide-leg trousers", "Minimal accessories"],
   },
@@ -47,7 +47,7 @@ const universes = [
       "Oversized proportions, confident contrasts, and street-inspired pieces that refuse to blend in.",
     colors: ["#242424", "#8A8F86", "#8fc99a"],
     image:
-      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=1100&q=85",
     mood: "Bold · Urban · Unapologetic",
     pieces: ["Oversized jacket", "Statement sneakers", "Utility trousers"],
   },
@@ -61,7 +61,7 @@ const universes = [
       "Clean lines, balanced proportions, and a carefully edited wardrobe where every piece earns its place.",
     colors: ["#E9E5DD", "#A7A49C", "#353832"],
     image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1100&q=85",
     mood: "Effortless · Modern · Balanced",
     pieces: ["Essential white shirt", "Straight-leg denim", "Everyday trainers"],
   },
@@ -75,7 +75,7 @@ const universes = [
       "Fluid fabrics, gentle colours, and expressive details that make everyday outfits feel a little magical.",
     colors: ["#E8C8CB", "#B7A4B7", "#F2E9DF"],
     image:
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1100&q=85",
     mood: "Dreamy · Expressive · Delicate",
     pieces: ["Flowing blouse", "Midi skirt", "Delicate jewellery"],
   },
@@ -89,7 +89,7 @@ const universes = [
       "Unexpected shapes, experimental combinations, and forward-looking fashion for those who imagine beyond trends.",
     colors: ["#8fc99a", "#424C49", "#171A19"],
     image:
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=85",
+      "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1100&q=85",
     mood: "Experimental · Futuristic · Artistic",
     pieces: ["Sculptural outerwear", "Technical fabrics", "Architectural accessories"],
   },

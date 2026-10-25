@@ -117,7 +117,7 @@ const products: Product[] = [
     description: "Relaxed proportions · Everyday",
     price: "Explore piece",
     image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85",
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=85",
     accent: "EASY BY DESIGN",
   },
 ];

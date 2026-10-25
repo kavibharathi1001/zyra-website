@@ -114,7 +114,7 @@ const looks: StyleLook[] = [
     name: "The Modern Essential",
     tagline: "Understated. Unforgettable.",
     image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=900&q=85",
     aesthetic: ["quiet-luxury", "minimalist"],
     occasions: ["work", "travel"],
     budget: "premium",
@@ -133,7 +133,7 @@ const looks: StyleLook[] = [
     name: "The Campus Edit",
     tagline: "Comfort with character.",
     image:
-      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=85",
     aesthetic: ["minimalist", "streetwear"],
     occasions: ["college", "weekend"],
     budget: "essential",
@@ -152,7 +152,7 @@ const looks: StyleLook[] = [
     name: "The Soft Focus",
     tagline: "A little romance, every day.",
     image:
-      "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85",
     aesthetic: ["romantic", "minimalist"],
     occasions: ["date-night", "weekend"],
     budget: "balanced",
@@ -171,7 +171,7 @@ const looks: StyleLook[] = [
     name: "The City Rebel",
     tagline: "Never dress to disappear.",
     image:
-      "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1509551388413-e18d0ac5d495?auto=format&fit=crop&w=900&q=85",
     aesthetic: ["streetwear", "future-couture"],
     occasions: ["college", "weekend", "party"],
     budget: "balanced",
@@ -190,7 +190,7 @@ const looks: StyleLook[] = [
     name: "The After-Hours Scholar",
     tagline: "Classic with a little mystery.",
     image:
-      "https://images.unsplash.com/photo-1506629905607-d9a0d7b9c4d1?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=85",
     aesthetic: ["dark-academia", "quiet-luxury"],
     occasions: ["college", "work", "weekend"],
     budget: "balanced",
@@ -209,7 +209,7 @@ const looks: StyleLook[] = [
     name: "The Anywhere Uniform",
     tagline: "Pack less. Create more.",
     image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85",
     aesthetic: ["minimalist", "quiet-luxury"],
     occasions: ["travel", "weekend"],
     budget: "essential",
@@ -228,7 +228,7 @@ const looks: StyleLook[] = [
     name: "The After-Dark Edit",
     tagline: "Let the details speak.",
     image:
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1566206091559-0f622955f7bc?auto=format&fit=crop&w=900&q=85",
     aesthetic: ["quiet-luxury", "future-couture", "romantic"],
     occasions: ["party", "date-night"],
     budget: "premium",
