@@ -128,8 +128,8 @@ export function TiltedGridHero({
       const next = measure(width, height, tileHeight, aspectRatio, gap, bend);
       setLayout((prev) =>
         prev?.columns === next.columns &&
-        prev.sweep === next.sweep &&
-        prev.unit === next.unit
+          prev.sweep === next.sweep &&
+          prev.unit === next.unit
           ? prev
           : next
       );
@@ -962,9 +962,8 @@ function ZyraMascotIllustration({
 }) {
   return (
     <div
-      className={`relative w-full h-full flex items-center justify-center transition-all duration-700 select-none ${
-        flightMode ? 'scale-110 -translate-y-4 rotate-[-3deg]' : 'hover:scale-105'
-      }`}
+      className={`relative w-full h-full flex items-center justify-center transition-all duration-700 select-none ${flightMode ? 'scale-110 -translate-y-4 rotate-[-3deg]' : 'hover:scale-105'
+        }`}
       onMouseEnter={onHover}
     >
       {/* Dynamic Multi-layered Celestial Halo & Emerald Glow */}
@@ -1007,9 +1006,8 @@ function ZyraMascotIllustration({
         <img
           src={zyraMascotPng}
           alt="ZYRA — The Resplendent Fashion Spirit Bird"
-          className={`w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(197,255,0,0.3)] transition-all duration-700 ${
-            flightMode ? 'brightness-110 drop-shadow-[0_20px_45px_rgba(197,255,0,0.55)]' : 'brightness-105'
-          }`}
+          className={`w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(197,255,0,0.3)] transition-all duration-700 ${flightMode ? 'brightness-110 drop-shadow-[0_20px_45px_rgba(197,255,0,0.55)]' : 'brightness-105'
+            }`}
         />
       </div>
     </div>
@@ -1404,11 +1402,10 @@ export default function App() {
                       setActivePillarIndex(idx);
                       showToast(`${pillar.title}: ${pillar.desc}`);
                     }}
-                    className={`px-3 py-1.5 rounded-full border text-xs font-mono uppercase tracking-wider flex items-center gap-1.5 transition-all ${
-                      activePillarIndex === idx
+                    className={`px-3 py-1.5 rounded-full border text-xs font-mono uppercase tracking-wider flex items-center gap-1.5 transition-all ${activePillarIndex === idx
                         ? 'border-[#C5FF00] bg-[#C5FF00]/15 text-[#C5FF00]'
                         : 'border-white/10 bg-[#101210] text-[#A0A59C] hover:text-white hover:border-white/30'
-                    }`}
+                      }`}
                   >
                     <span className="text-[#C5FF00]">{pillar.glyph}</span>
                     <span>{pillar.title}</span>
@@ -1621,11 +1618,10 @@ export default function App() {
                       setSelectedAesthetic(item);
                       showToast(`Aesthetic calibrated to "${item.title}".`);
                     }}
-                    className={`py-3 px-3 rounded-2xl border text-left flex flex-col justify-between transition-all duration-300 ${
-                      isSelected
+                    className={`py-3 px-3 rounded-2xl border text-left flex flex-col justify-between transition-all duration-300 ${isSelected
                         ? 'border-[#C5FF00] bg-[#151815] shadow-[0_0_20px_rgba(197,255,0,0.25)] text-white scale-[1.02]'
                         : 'border-white/10 bg-[#080908]/60 text-[#A0A59C] hover:border-white/30 hover:text-white'
-                    }`}
+                      }`}
                   >
                     <span className="text-[9px] font-mono uppercase text-[#A0A59C] block mb-1">
                       {item.id.replace('-', ' ')}
@@ -1726,11 +1722,10 @@ export default function App() {
                     setLookIndex(0);
                     showToast(`Occasion calibrated to ${occ}.`);
                   }}
-                  className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all ${
-                    selectedOccasion === occ
+                  className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all ${selectedOccasion === occ
                       ? 'bg-[#C5FF00] text-[#080908] font-bold shadow-[0_0_20px_rgba(197,255,0,0.3)]'
                       : 'border border-white/15 bg-[#151815] text-[#A0A59C] hover:border-white/30 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {occ}
                 </button>
@@ -1895,11 +1890,10 @@ export default function App() {
                       setSelectedPieceIndex(idx);
                       setMatchingModeIndex(0);
                     }}
-                    className={`flex-1 py-2 px-3 rounded-lg text-xs font-mono uppercase tracking-wider border transition-all ${
-                      selectedPieceIndex === idx
+                    className={`flex-1 py-2 px-3 rounded-lg text-xs font-mono uppercase tracking-wider border transition-all ${selectedPieceIndex === idx
                         ? 'border-[#C5FF00] bg-[#C5FF00]/15 text-[#C5FF00]'
                         : 'border-white/10 bg-[#151815] text-[#A0A59C]'
-                    }`}
+                      }`}
                   >
                     {piece.name.split(' ')[0]}
                   </button>
@@ -1934,11 +1928,10 @@ export default function App() {
                   <button
                     key={idx}
                     onClick={() => setMatchingModeIndex(idx)}
-                    className={`text-left p-3 rounded-xl border text-xs font-mono transition-all flex items-center justify-between ${
-                      matchingModeIndex === idx
+                    className={`text-left p-3 rounded-xl border text-xs font-mono transition-all flex items-center justify-between ${matchingModeIndex === idx
                         ? 'border-[#C5FF00] bg-[#151815] text-[#F6F7F2]'
                         : 'border-white/5 bg-[#080908] text-[#A0A59C] hover:border-white/20'
-                    }`}
+                      }`}
                   >
                     <span>{comb.mode}</span>
                     {matchingModeIndex === idx && <Check size={14} className="text-[#C5FF00]" />}
@@ -2059,17 +2052,15 @@ export default function App() {
                 <div className="flex items-center bg-[#151815] p-1 rounded-full border border-white/10">
                   <button
                     onClick={() => setTryOnMode('slider')}
-                    className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase transition-all ${
-                      tryOnMode === 'slider' ? 'bg-[#C5FF00] text-[#080908] font-bold' : 'text-[#A0A59C]'
-                    }`}
+                    className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase transition-all ${tryOnMode === 'slider' ? 'bg-[#C5FF00] text-[#080908] font-bold' : 'text-[#A0A59C]'
+                      }`}
                   >
                     Split Slider
                   </button>
                   <button
                     onClick={() => setTryOnMode('blend')}
-                    className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase transition-all ${
-                      tryOnMode === 'blend' ? 'bg-[#C5FF00] text-[#080908] font-bold' : 'text-[#A0A59C]'
-                    }`}
+                    className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase transition-all ${tryOnMode === 'blend' ? 'bg-[#C5FF00] text-[#080908] font-bold' : 'text-[#A0A59C]'
+                      }`}
                   >
                     Layer Blend
                   </button>
@@ -2086,11 +2077,10 @@ export default function App() {
                     <button
                       key={model.id}
                       onClick={() => setTryOnModel(model)}
-                      className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all ${
-                        tryOnModel.id === model.id
+                      className={`flex items-center gap-3 p-3 rounded-xl border text-left transition-all ${tryOnModel.id === model.id
                           ? 'border-[#C5FF00] bg-[#151815] text-[#F6F7F2]'
                           : 'border-white/5 bg-[#080908] text-[#A0A59C] hover:border-white/20'
-                      }`}
+                        }`}
                     >
                       <img
                         src={model.img}
@@ -2136,11 +2126,10 @@ export default function App() {
                       <button
                         key={val}
                         onClick={() => setSliderPosition(val)}
-                        className={`flex-1 py-1.5 rounded-lg border text-[11px] font-mono ${
-                          sliderPosition === val
+                        className={`flex-1 py-1.5 rounded-lg border text-[11px] font-mono ${sliderPosition === val
                             ? 'border-[#C5FF00] bg-[#C5FF00]/15 text-[#C5FF00]'
                             : 'border-white/10 bg-[#151815] text-[#A0A59C]'
-                        }`}
+                          }`}
                       >
                         {val === 50 ? '50% Split' : `${val}%`}
                       </button>
@@ -2373,7 +2362,7 @@ export default function App() {
               </h2>
 
               <p className="text-lg text-[#F6F7F2] font-light leading-relaxed mb-4">
-                ZYRA is a magical bird-butterfly hybrid inspired by the Resplendent Quetzal, representing creativity, transformation, intelligence, and personal expression.
+                ZYRA is a magical bird inspired by the Resplendent Quetzal, representing creativity, transformation, intelligence, and personal expression.
               </p>
 
               <p className="text-sm text-[#A0A59C] leading-relaxed mb-8">
@@ -2399,11 +2388,10 @@ export default function App() {
                     <button
                       key={idx}
                       onClick={() => setZyraActiveDialogue(p)}
-                      className={`text-left text-xs p-3 rounded-lg border transition-all ${
-                        zyraActiveDialogue.q === p.q
+                      className={`text-left text-xs p-3 rounded-lg border transition-all ${zyraActiveDialogue.q === p.q
                           ? 'bg-[#151815] border-[#C5FF00] text-[#F6F7F2]'
                           : 'bg-[#151815]/50 border-white/5 text-[#A0A59C] hover:border-white/20 hover:text-white'
-                      }`}
+                        }`}
                     >
                       "{p.q}"
                     </button>
@@ -2463,11 +2451,10 @@ export default function App() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all ${
-                    selectedCategory === cat
+                  className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all ${selectedCategory === cat
                       ? 'bg-[#C5FF00] text-[#080908] font-bold shadow-[0_0_15px_rgba(197,255,0,0.3)]'
                       : 'border border-white/15 bg-[#151815] text-[#A0A59C] hover:text-white'
-                  }`}
+                    }`}
                 >
                   {cat}
                 </button>
