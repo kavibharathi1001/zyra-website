@@ -1,0 +1,105 @@
+.product-navigation {
+  position: sticky;
+  top: 88px;
+  z-index: 18;
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 10px 0 0;
+  pointer-events: auto;
+}
+
+.product-navigation-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border: 1px solid rgba(167, 191, 176, 0.12);
+  border-radius: 999px;
+  background: rgba(14, 17, 15, 0.88);
+  backdrop-filter: blur(18px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.product-navigation-track::-webkit-scrollbar {
+  display: none;
+}
+
+.product-nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  min-height: 48px;
+  padding: 11px 16px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: rgba(232, 238, 234, 0.68);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.product-nav-item:hover {
+  color: #eaf7ef;
+  border-color: rgba(140, 203, 155, 0.25);
+}
+
+.product-nav-item.is-active {
+  color: #dffae9;
+  background: rgba(120, 219, 163, 0.08);
+  border-color: rgba(140, 203, 155, 0.18);
+}
+
+.product-nav-index {
+  font-size: 9px;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.product-nav-label {
+  position: relative;
+  z-index: 1;
+}
+
+.product-nav-glow {
+  position: absolute;
+  inset: 2px 3px;
+  z-index: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(140, 203, 155, 0.28);
+  background: linear-gradient(
+    135deg,
+    rgba(140, 203, 155, 0.18),
+    rgba(181, 230, 189, 0.08)
+  );
+  box-shadow: 0 0 0 1px rgba(92, 158, 112, 0.08), 0 14px 30px rgba(30, 104, 69, 0.16);
+}
+
+@media (max-width: 720px) {
+  .product-navigation {
+    top: 80px;
+    width: calc(100% - 20px);
+    padding-top: 8px;
+  }
+
+  .product-navigation-track {
+    gap: 8px;
+    padding-inline: 8px 12px;
+    border-radius: 20px;
+  }
+
+  .product-nav-item {
+    min-height: 42px;
+    padding: 10px 12px 11px;
+    letter-spacing: 0.1em;
+    font-size: 10px;
+  }
+}
