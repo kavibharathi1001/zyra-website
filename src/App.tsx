@@ -28,6 +28,7 @@ import tryonBaseSilhouette from './assets/tryon-base-silhouette.jpg';
 import tryonNeuralDrape from './assets/tryon-neural-drape.jpg';
 import tryonM2Base from './assets/tryon-m2-base.jpg';
 import tryonM2Draped from './assets/tryon-m2-draped.jpg';
+import tryonM3Base from './assets/tryon-m3-base.jpg';
 import tryonM3Draped from './assets/tryon-m3-draped.jpg';
 
 // ==========================================
@@ -937,7 +938,7 @@ const SMART_MATCH_PIECES = [
 const TRY_ON_MODELS = [
   { id: 'm1', name: 'Model 01 — Neural Studio Reference (Base Silhouette)', stats: '176cm • Calibrating Frame • Position Detected', img: tryonBaseSilhouette, drapedImg: tryonNeuralDrape, garmentName: 'Double-Pleat Neural Drape Trench' },
   { id: 'm2', name: 'Model 02 — Tailored Male Silhouette', stats: '186cm • Calibrating Frame • Position Detected', img: tryonM2Base, drapedImg: tryonM2Draped, garmentName: 'Architectural Charcoal Wool Trench' },
-  { id: 'm3', name: 'Model 03 — Urban Editorial Silhouette', stats: '172cm • Alignment Coordinates • Spectral Match 98.4%', img: tryonM3Draped, drapedImg: tryonM3Draped, garmentName: 'Urban Technical Draped Overcoat' }
+  { id: 'm3', name: 'Model 03 — Urban Editorial Silhouette', stats: '172cm • Alignment Coordinates • Position Detected', img: tryonM3Base, drapedImg: tryonM3Draped, garmentName: 'Streetwear Technical Draped Overcoat' }
 ];
 
 const ZYRA_PROMPTS = [
