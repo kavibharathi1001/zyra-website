@@ -24,6 +24,8 @@ import {
 
 import heroBrandEditorial from './assets/zyra-brand-editorial.jpg';
 import zyraMascotPng from './assets/zyra-quetzal-mascot.png';
+import tryonBaseSilhouette from './assets/tryon-base-silhouette.jpg';
+import tryonNeuralDrape from './assets/tryon-neural-drape.jpg';
 
 // ==========================================
 // 0. UTILITY & HELPER FUNCTIONS
@@ -776,12 +778,12 @@ const RUNWAY_DISCOVERY_ITEMS: GalleryItem[] = [
     fiber: 'Bonded Crepe & Horsehair'
   },
   {
-    image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=80',
-    text: 'Double-Pleat Cashmere Trench',
-    subtext: 'Kollektiv 01 • Signature',
+    image: tryonNeuralDrape,
+    text: 'Double-Pleat Neural Drape Trench',
+    subtext: 'ZYRA Atelier • Spectral 98.4%',
     category: 'Outerwear',
     price: '$1,120',
-    fiber: 'Double-Faced Cashmere'
+    fiber: 'Double-Faced Cashmere & Spectral Mesh'
   },
   {
     image: 'https://images.unsplash.com/photo-1525450824786-227cbef70703?auto=format&fit=crop&w=1200&q=80',
@@ -930,9 +932,9 @@ const SMART_MATCH_PIECES = [
 ];
 
 const TRY_ON_MODELS = [
-  { id: 'm1', name: 'Model 01 — Architectural Female Silhouette', stats: '178cm • Shoulders 41cm • Chest 84cm', img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80' },
-  { id: 'm2', name: 'Model 02 — Tailored Male Silhouette', stats: '186cm • Shoulders 48cm • Chest 98cm', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80' },
-  { id: 'm3', name: 'Model 03 — Editorial Androgynous', stats: '182cm • Shoulders 44cm • Chest 89cm', img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80' }
+  { id: 'm1', name: 'Model 01 — Neural Studio Reference (Base Silhouette)', stats: '176cm • Calibrating Frame • Position Detected', img: tryonBaseSilhouette, drapedImg: tryonNeuralDrape },
+  { id: 'm2', name: 'Model 02 — Tailored Male Silhouette', stats: '186cm • Shoulders 48cm • Chest 98cm', img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80', drapedImg: tryonNeuralDrape },
+  { id: 'm3', name: 'Model 03 — Editorial Androgynous', stats: '182cm • Shoulders 44cm • Chest 89cm', img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80', drapedImg: tryonNeuralDrape }
 ];
 
 const ZYRA_PROMPTS = [
@@ -2215,13 +2217,15 @@ export default function App() {
               >
                 {/* Base Silhouette (Before Layer) */}
                 <img
-                  src={tryOnModel.img}
+                  src={tryOnModel.id === 'm1' ? tryonBaseSilhouette : tryOnModel.img}
                   alt={tryOnModel.name}
                   className="absolute inset-0 w-full h-full object-cover object-center filter brightness-95"
                 />
-                <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-[#080908]/85 border border-white/15 text-[9px] font-mono uppercase text-[#A0A59C]">
-                  Base Silhouette
-                </div>
+                {tryOnModel.id !== 'm1' && (
+                  <div className="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-[#080908]/85 border border-white/15 text-[9px] font-mono uppercase text-[#A0A59C]">
+                    Base Silhouette
+                  </div>
+                )}
 
                 {/* Overlaid Draped Layer (After Layer) */}
                 {tryOnMode === 'slider' ? (
@@ -2232,13 +2236,15 @@ export default function App() {
                     }}
                   >
                     <img
-                      src={tryOnGarment.img}
+                      src={tryOnModel.id === 'm1' ? tryonNeuralDrape : tryOnGarment.img}
                       alt={tryOnGarment.name}
                       className="absolute inset-0 w-full h-full object-cover object-center filter contrast-105"
                     />
-                    <div className="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-[#080908]/85 border border-[#C5FF00]/40 text-[9px] font-mono uppercase text-[#C5FF00]">
-                      ZYRA Neural Drape
-                    </div>
+                    {tryOnModel.id !== 'm1' && (
+                      <div className="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-[#080908]/85 border border-[#C5FF00]/40 text-[9px] font-mono uppercase text-[#C5FF00]">
+                        ZYRA Neural Drape
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <div
@@ -2246,9 +2252,9 @@ export default function App() {
                     style={{ opacity: tryOnOverlayOpacity }}
                   >
                     <img
-                      src={tryOnGarment.img}
+                      src={tryOnModel.id === 'm1' ? tryonNeuralDrape : tryOnGarment.img}
                       alt={tryOnGarment.name}
-                      className="w-3/4 h-3/4 object-contain mix-blend-screen filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                      className={tryOnModel.id === 'm1' ? "absolute inset-0 w-full h-full object-cover object-center filter contrast-105" : "w-3/4 h-3/4 object-contain mix-blend-screen filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"}
                     />
                   </div>
                 )}
@@ -2268,11 +2274,15 @@ export default function App() {
                 {/* Overlaid Specs */}
                 <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-[#080908]/90 border border-white/15 backdrop-blur-md flex items-center justify-between text-xs z-20">
                   <div>
-                    <h5 className="font-bold uppercase text-white">{tryOnGarment.name}</h5>
-                    <p className="text-[10px] font-mono text-[#A0A59C]">Fitting Spec 3.4 • Drag handle ⟷</p>
+                    <h5 className="font-bold uppercase text-white">
+                      {tryOnModel.id === 'm1' ? 'Double-Pleat Neural Drape Trench' : tryOnGarment.name}
+                    </h5>
+                    <p className="text-[10px] font-mono text-[#A0A59C]">
+                      {tryOnModel.id === 'm1' ? 'Spectral Match 98.4% • Drag handle ⟷' : 'Fitting Spec 3.4 • Drag handle ⟷'}
+                    </p>
                   </div>
                   <button
-                    onClick={() => showToast(`Garment "${tryOnGarment.name}" added to wishlist.`)}
+                    onClick={() => showToast(`Garment "${tryOnModel.id === 'm1' ? 'Double-Pleat Neural Drape Trench' : tryOnGarment.name}" added to wishlist.`)}
                     className="px-3 py-1.5 rounded-full border border-white/20 text-[#C5FF00] hover:border-[#C5FF00] font-mono text-[10px] uppercase"
                   >
                     Add To Wishlist
