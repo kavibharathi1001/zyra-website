@@ -117,6 +117,9 @@ main {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--zyra-sans);
   font-size: 20px;
   font-weight: 800;
@@ -125,7 +128,19 @@ main {
   text-decoration: none;
 }
 
-.brand span {
+.brand-emblem {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(143, 201, 154, 0.5));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand:hover .brand-emblem {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.brand-dot {
   color: var(--zyra-green);
 }
 
@@ -704,9 +719,44 @@ main {
   letter-spacing: 0.15em;
 }
 
-/* MANIFESTO */
+/* HERO MASCOT INTEGRATION */
+.hero-mascot-container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 260px;
+  max-width: 82%;
+  pointer-events: none;
+}
+
+.hero-mascot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 28px rgba(143, 201, 154, 0.45));
+}
+
+.hero-mascot-glow {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(143, 201, 154, 0.28) 0%, transparent 68%);
+  filter: blur(28px);
+  z-index: -1;
+}
+
+/* MANIFESTO WITH BRAND ARTWORK */
 .manifesto {
   padding: 120px 0;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 68px);
 }
 
 .manifesto-top {
@@ -730,11 +780,87 @@ main {
 }
 
 .manifesto h2 {
-  margin-top: 48px;
+  margin-top: 36px;
   font-size: clamp(38px, 5.2vw, 68px);
   font-weight: 500;
   line-height: 1.08;
   letter-spacing: -0.05em;
+}
+
+.manifesto-lead {
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.85;
+  color: rgba(242, 243, 238, 0.9);
+  margin: 20px 0 16px;
+}
+
+.manifesto-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.pillar-item {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--zyra-green-bright);
+  background: rgba(143, 201, 154, 0.08);
+  border: 1px solid rgba(143, 201, 154, 0.25);
+  padding: 5px 13px;
+  border-radius: 999px;
+}
+
+.manifesto-artwork-frame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(143, 201, 154, 0.28);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.65), 0 0 32px rgba(143, 201, 154, 0.15);
+}
+
+.manifesto-editorial-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.manifesto-artwork-frame:hover .manifesto-editorial-photo {
+  transform: scale(1.03);
+}
+
+.manifesto-artwork-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 65%, rgba(8, 10, 8, 0.85) 100%);
+  pointer-events: none;
+}
+
+.manifesto-badge {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(8, 10, 8, 0.85);
+  border: 1px solid rgba(143, 201, 154, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--zyra-white);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.manifesto-badge svg {
+  color: var(--zyra-green);
 }
 
 .manifesto-bottom {
@@ -742,7 +868,7 @@ main {
   align-items: flex-end;
   justify-content: space-between;
   gap: 30px;
-  margin-top: 36px;
+  margin-top: 24px;
   flex-wrap: wrap;
 }
 
@@ -1017,6 +1143,11 @@ main {
 
   .manifesto {
     padding: 70px 0;
+  }
+
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   .manifesto-bottom {

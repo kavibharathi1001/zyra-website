@@ -22,6 +22,8 @@ import {
   GlassTiles,
   type GlassTilesPalette,
 } from "./components/ui/glass-tiles";
+import quetzalMascot from "./assets/zyra-quetzal-mascot.png";
+import brandEditorial from "./assets/zyra-brand-editorial.jpg";
 import "./App.css";
 
 const FashionScene = lazy(() => import("./FashionScene"));
@@ -167,7 +169,14 @@ export default function App() {
       {/* Primary Floating Header */}
       <header className={`navbar ${menuOpen ? "navbar-menu-open" : ""}`}>
         <a href="#home" className="brand" aria-label="ZYRA home">
-          ZYRA<span>.</span>
+          <img
+            src={quetzalMascot}
+            alt=""
+            className="brand-emblem"
+            aria-hidden="true"
+          />
+          <span className="brand-name">ZYRA</span>
+          <span className="brand-dot">.</span>
         </a>
 
         {/* Desktop Navigation Links */}
@@ -353,7 +362,7 @@ export default function App() {
 
                 <div className="visual-label visual-label-top">
                   <span>01 / DISCOVER</span>
-                  <span>PERSONAL STYLE</span>
+                  <span>PERSONAL STYLE SPIRIT</span>
                 </div>
 
                 <Suspense
@@ -364,20 +373,41 @@ export default function App() {
                   <FashionScene />
                 </Suspense>
 
+                {/* Zyra Resplendent Quetzal Mascot Hero Integration */}
+                <motion.div
+                  className="hero-mascot-container"
+                  animate={{
+                    y: [-8, 8, -8],
+                    rotate: [-1.2, 1.2, -1.2],
+                  }}
+                  transition={{
+                    duration: 5.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <img
+                    src={quetzalMascot}
+                    alt="Zyra — Inspired by the Resplendent Quetzal"
+                    className="hero-mascot-img"
+                  />
+                  <div className="hero-mascot-glow" />
+                </motion.div>
+
                 <div className="floating-card">
                   <span className="floating-icon">
                     <Sparkles size={18} />
                   </span>
                   <div>
-                    <span className="card-overline">A NEW PERSPECTIVE</span>
+                    <span className="card-overline">THE RESPLENDENT SPIRIT</span>
                     <strong>Style, reimagined.</strong>
-                    <p>Your next signature look starts here.</p>
+                    <p>Transformation · Beauty · Intelligence</p>
                   </div>
                 </div>
 
                 <div className="visual-label visual-label-bottom">
                   <span className="status-dot" />
-                  ZYRA INTELLIGENCE <span>·</span> FASHION, EVOLVED
+                  ZYRA INTELLIGENCE <span>·</span> INSPIRED BY THE RESPLENDENT QUETZAL
                 </div>
               </div>
 
@@ -394,33 +424,73 @@ export default function App() {
         </motion.div>
       </section>
 
-      {/* Manifesto Transition Bridge */}
+      {/* Manifesto Transition Bridge with Official Brand Artwork */}
       <section className="manifesto section-shell" id="experience">
-        <div className="manifesto-top">
-          <div className="section-kicker">01 — A DIFFERENT PERSPECTIVE</div>
-          <span className="section-coordinate">STYLE IS AN EXPLORATION</span>
-        </div>
+        <div className="manifesto-grid">
+          <div className="manifesto-content">
+            <div className="manifesto-top">
+              <div className="section-kicker">01 — THE ZYRA PHILOSOPHY</div>
+              <span className="section-coordinate">SACRED SPIRIT OF TRANSFORMATION</span>
+            </div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
-        >
-          Style is personal.
-          <br />
-          <span className="accent-text">Discovery should be too.</span>
-        </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
+            >
+              Your Style.
+              <br />
+              <span className="accent-text">Reimagined.</span>
+            </motion.h2>
 
-        <div className="manifesto-bottom">
-          <p>
-            Start with a single piece you already love. Explore unexpected
-            layering, balanced proportions, and color stories that feel
-            completely, unmistakably your own.
-          </p>
-          <a href="#style-discovery" className="text-link">
-            Explore your possibilities <ArrowRight size={16} />
-          </a>
+            <p className="manifesto-lead">
+              Inspired by the Resplendent Quetzal — ancient emblem of radiant
+              emerald and gold plumage, timeless freedom, and rebirth. ZYRA
+              elevates daily dressing into an art form of personal self-expression.
+            </p>
+
+            <div className="manifesto-pillars" aria-label="ZYRA Core Values">
+              <span className="pillar-item">✦ Beauty</span>
+              <span className="pillar-item">✦ Creativity</span>
+              <span className="pillar-item">✦ Transformation</span>
+              <span className="pillar-item">✦ Intelligence</span>
+              <span className="pillar-item">✦ Expression</span>
+            </div>
+
+            <div className="manifesto-bottom">
+              <p>
+                Start with a single piece you already love. Explore unexpected
+                layering, balanced proportions, and color stories that feel
+                completely, unmistakably your own.
+              </p>
+              <a href="#style-discovery" className="text-link">
+                Explore your possibilities <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+
+          <motion.div
+            className="manifesto-artwork"
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="manifesto-artwork-frame">
+              <img
+                src={brandEditorial}
+                alt="ZYRA Brand Muse with the Resplendent Quetzal"
+                className="manifesto-editorial-photo"
+                loading="lazy"
+              />
+              <div className="manifesto-artwork-overlay" />
+              <div className="manifesto-badge">
+                <Sparkles size={13} />
+                <span>ZYRA EDITORIAL / RESPLENDENT SPIRIT</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         <div className="manifesto-line" />
